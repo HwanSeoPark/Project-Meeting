@@ -1,28 +1,28 @@
-name: Update README with latest meeting note
+# name: Update README with latest meeting note
 
-on:
-  schedule:
-    - cron: '0 8 * * *'  # 매일 오전 8시 UTC (한국 시간 오후 5시)
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '0 8 * * *'  # 매일 오전 8시 UTC (한국 시간 오후 5시)
+#   workflow_dispatch:
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   update-readme:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: '3.x'
 
-      - name: Run update script
-        run: python update-readme.py
+#       - name: Run update script
+#         run: python update-readme.py
 
-      - name: Commit and Push
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "🔄 최신 회의록 자동 업데이트"
-          git push
+#       - name: Commit and Push
+#         run: |
+#           git config --global user.name 'github-actions[bot]'
+#           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+#           git add README.md
+#           git commit -m "🔄 최신 회의록 자동 업데이트"
+#           git push
